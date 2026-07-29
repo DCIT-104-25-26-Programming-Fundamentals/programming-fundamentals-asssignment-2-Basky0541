@@ -57,3 +57,63 @@
 #include <iostream>
 using namespace std;
 
+#include <iostream>
+using namespace std;
+
+// Part A: Print the multiplication table for one number
+void singleTable(int num)
+{
+    cout << "\nMultiplication Table for " << num << ":\n";
+
+    for (int i = 1; i <= 12; i++)
+    {
+        cout << num << " x " << i << " = " << num * i << endl;
+    }
+}
+
+// Part B: Print multiplication tables from 1 to N
+void tablesUpToN(int n)
+{
+    if (n <= 0)
+    {
+        cout << "Error: N must be a positive integer." << endl;
+        return;
+    }
+
+    for (int num = 1; num <= n; num++)
+    {
+        cout << "\nMultiplication Table for " << num << ":\n";
+
+        for (int i = 1; i <= 12; i++)
+        {
+            cout << num << " x " << i << " = " << num * i << endl;
+        }
+
+        cout << "---------------------------" << endl;
+    }
+}
+
+int main()
+{
+    int number, n;
+
+    // Part A
+    cout << "Enter a number: ";
+    cin >> number;
+
+    singleTable(number);
+
+    // Part B
+    cout << "\nEnter a value for N: ";
+    cin >> n;
+
+    if (n <= 0)
+    {
+        cout << "Error: N must be a positive integer." << endl;
+        return 0;
+    }
+
+    tablesUpToN(n);
+
+    return 0;
+}
